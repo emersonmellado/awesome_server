@@ -3,7 +3,12 @@ const route = express.Router()
 const ProductModel = require('../../models/product')
 
 route.get('/', async (req, res) => {
-    const products = await ProductModel.find().exec();
+    let filter = {};
+    if (req.query.category !== 'null') {
+        filter.category = req.query.category
+    }
+    
+    const products = await ProductModel.find(filter).exec();
     res.json(products)
 })
 
