@@ -1,0 +1,12 @@
+extends ./layout.pug
+
+block content
+    hr
+    .row
+        .card(style='width: 18rem;')
+            .card-body
+                form(action="/admin/categories/update", method="post")
+                    input(type="hidden" name="id" id="id" value=category._id)
+                    input(type="text", value=category.name placeholder="category name", required="required", name="category")
+                    button Update
+                a(href="/admin/categories/delete/" + category._id class="btn btn-danger") Delete

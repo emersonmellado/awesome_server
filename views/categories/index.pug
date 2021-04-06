@@ -1,0 +1,12 @@
+extends ./layout.pug
+
+block content
+  h3 Welcome to the Category administration
+  hr
+  include ./create.pug
+  .row
+    each category in categories
+      a(href="/admin/categories/" + category._id)
+        .card(style='width: 18rem;')
+          .card-body
+            h5.card-title= category.name
