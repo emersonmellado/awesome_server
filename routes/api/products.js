@@ -4,10 +4,9 @@ const ProductModel = require('../../models/product')
 
 route.get('/', async (req, res) => {
     let filter = {};
-    if (req.query.category !== 'null') {
+    if (req.query.category !== 'null' && req.query.category !== undefined) {
         filter.category = req.query.category
     }
-    
     const products = await ProductModel.find(filter).exec();
     res.json(products)
 })
