@@ -8,6 +8,7 @@ app.set('view engine', 'pug');
 app.use(cors());
 
 const categoryRoutes = require('./routes/api/categories')
+const productRoutes = require('./routes/api/products')
 
 const categoryAdminRoutes = require('./routes/admin/categories')
 const productAdminRoutes = require('./routes/admin/products')
@@ -30,6 +31,7 @@ app.get('/', async (req, res) => {
 })
 
 app.use('/api/categories', categoryRoutes);
+app.use('/api/products', productRoutes);
 
 app.use('/admin/categories', categoryAdminRoutes);
 app.use('/admin/products', productAdminRoutes);
