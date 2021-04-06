@@ -22,7 +22,7 @@ var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 app.get('/', async (req, res) => {
-    res.send("<h1 style='color: blue;'>Hello hello from Awesome server</h1>")
+    res.render('index');
 })
 
 app.use('/categories', categoryRoutes);
