@@ -1,9 +1,11 @@
 require('dotenv').config()
 const express = require('express');
+const cors = require('cors');
 const app = express();
 const port = process.env.PORT || 3000
 
 app.set('view engine', 'pug');
+app.use(cors());
 
 const categoryRoutes = require('./routes/api/categories')
 const categoryAdminRoutes = require('./routes/admin/categories')
