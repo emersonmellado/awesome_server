@@ -4,7 +4,9 @@ block content
     hr
     .row
         .card(style='width: 18rem;')
-            .card-body
+            .card-body            
+                a(href="/admin/products/delete/" + product._id class="btn btn-danger") Delete
+                hr
                 div 
                     form(action="/admin/products/update", method="post")
                         input(type="hidden" name="id" id="id" value=product._id)
@@ -16,6 +18,4 @@ block content
                         input(type="text", value=product.tags placeholder="#cool, #super", required="required", name="tags")
                         input(type="text", value=product.price placeholder="19.99", required="required", name="price")
                         input(type="text", value=product.category placeholder="Science Fiction, Fiction", required="required", name="category")
-                        button Update
-                hr
-                a(href="/admin/products/delete/" + product._id class="btn btn-danger") Delete
+                        button Update                

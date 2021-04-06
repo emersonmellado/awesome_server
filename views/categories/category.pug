@@ -5,8 +5,9 @@ block content
     .row
         .card(style='width: 18rem;')
             .card-body
+                a(href="/admin/categories/delete/" + category._id class="btn btn-danger") Delete
+                hr
                 form(action="/admin/categories/update", method="post")
                     input(type="hidden" name="id" id="id" value=category._id)
                     input(type="text", value=category.name placeholder="category name", required="required", name="category")
-                    button Update
-                a(href="/admin/categories/delete/" + category._id class="btn btn-danger") Delete
+                    button Update                
