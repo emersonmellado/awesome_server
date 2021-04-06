@@ -5,7 +5,7 @@ const port = process.env.PORT || 3000
 
 app.set('view engine', 'pug');
 
-const categoryRoutes = require('./routes/categories')
+const categoryRoutes = require('./routes/api/categories')
 const categoryAdminRoutes = require('./routes/admin/categories')
 
 //Import the mongoose module
@@ -25,7 +25,7 @@ app.get('/', async (req, res) => {
     res.render('index');
 })
 
-app.use('/categories', categoryRoutes);
+app.use('/api/categories', categoryRoutes);
 app.use('/admin/categories', categoryAdminRoutes);
 
 app.listen(port, () => {
