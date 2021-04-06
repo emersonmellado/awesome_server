@@ -8,7 +8,9 @@ app.set('view engine', 'pug');
 app.use(cors());
 
 const categoryRoutes = require('./routes/api/categories')
+
 const categoryAdminRoutes = require('./routes/admin/categories')
+const productAdminRoutes = require('./routes/admin/products')
 
 //Import the mongoose module
 var mongoose = require('mongoose');
@@ -28,7 +30,9 @@ app.get('/', async (req, res) => {
 })
 
 app.use('/api/categories', categoryRoutes);
+
 app.use('/admin/categories', categoryAdminRoutes);
+app.use('/admin/products', productAdminRoutes);
 
 app.listen(port, () => {
     console.log(`Server is listening on port ${port}`)

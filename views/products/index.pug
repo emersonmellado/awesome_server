@@ -1,0 +1,13 @@
+extends ../layout.pug
+
+block content
+  a(href="/") Home
+  h3 Product admin
+  hr
+  include ./create.pug
+  .row
+    each product in products
+      a(href="/admin/products/" + product._id)
+        .card(style='width: 18rem;')
+          .card-body
+            h5.card-title= product.name

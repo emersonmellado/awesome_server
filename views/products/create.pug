@@ -1,0 +1,19 @@
+div.create-container
+  form(action="/admin/products",  method="post")
+    input(type="text", class="form-control" placeholder="Product name", required="required", name="name")
+    br
+    input(type="text", class="form-control" placeholder="Image full URL", required="required", name="image")
+    br
+    input(type="text", class="form-control" placeholder="Short description", required="required", name="short_description")
+    br
+    input(type="text", class="form-control" placeholder="Long Description", required="required", name="long_description")
+    br
+    input(type="text", class="form-control" placeholder="O'rlley", required="required", name="brand")
+    br
+    input(type="text", class="form-control" placeholder="#cool, #super", required="required", name="tags")
+    br
+    input(type="text", class="form-control" placeholder="19.99", required="required", name="price")
+    br
+    input(type="text", class="form-control" placeholder="Science Fiction, Fiction", required="required", name="category")
+    br
+    button Create

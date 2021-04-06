@@ -1,0 +1,21 @@
+extends ../layout.pug
+
+block content
+    hr
+    .row
+        .card(style='width: 18rem;')
+            .card-body
+                div 
+                    form(action="/admin/products/update", method="post")
+                        input(type="hidden" name="id" id="id" value=product._id)
+                        input(type="text", value=product.name placeholder="Product name", required="required", name="name")
+                        input(type="text", value=product.image placeholder="Image full URL", required="required", name="image")
+                        input(type="text", value=product.short_description placeholder="Short description", required="required", name="short_description")
+                        input(type="text", value=product.long_description placeholder="Long Description", required="required", name="long_description")
+                        input(type="text", value=product.brand placeholder="O'rlley", required="required", name="brand")
+                        input(type="text", value=product.tags placeholder="#cool, #super", required="required", name="tags")
+                        input(type="text", value=product.price placeholder="19.99", required="required", name="price")
+                        input(type="text", value=product.category placeholder="Science Fiction, Fiction", required="required", name="category")
+                        button Update
+                hr
+                a(href="/admin/products/delete/" + product._id class="btn btn-danger") Delete
